@@ -1,20 +1,22 @@
 # Fleet-Style Semantic Platform
 
-Distributed retrieval + API system inspired by Fleet-style architectures.  
-The platform combines a Rails-style Node.js backend, a Redis-backed job queue, and a small React dashboard for monitoring jobs end-to-end.
+I built this as a hands-on way to practice the kind of distributed, low-latency systems that power real production environments.  
+It’s a small end-to-end platform with a Rails-style Node.js backend, a Redis-backed job queue for async work, and a React dashboard to monitor job flow in real time—similar to how internal tools at Tesla visualize fleet data and request pipelines.
 
 ---
 
-## ✨ What this project demonstrates
+## What this project demonstrates
 
-- **Distributed retrieval pipeline** using a lightweight job queue (Bull + Redis)
-- **JWT-protected API** for enqueueing and inspecting retrieval jobs
-- **Event-driven update path**: jobs are processed asynchronously by workers
-- **React dashboard** to drive the API and visualize system behaviour
+- A **distributed retrieval pipeline** that turns incoming requests into background jobs using Bull + Redis  
+- A **JWT-secured API layer**, designed with clean routing and predictable response patterns  
+- An **event-driven worker path** that processes retrieval tasks asynchronously and returns consistent, low-latency results  
+- A simple **React dashboard** that drives the API, visualizes job states, and surfaces system behavior the way internal fleet tools would
+
+Overall, this project was my way of practicing how to design components that are **fault-tolerant, observable, and scalable**—all core ideas behind fleet data platforms, telemetry systems, and distributed services.
 
 ---
 
-## 🧱 High-Level Architecture
+## High-Level Architecture
 
 ```text
 [ React Dashboard ]  ──(HTTP)──>  [ Node.js API ]
